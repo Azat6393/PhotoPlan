@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/settingFragment"
+        android:title="Setting"
+        android:icon="@drawable/setting"/>
+
+    <item android:id="@+id/costsFragment"
+        android:title="Costs"
+        android:icon="@drawable/costs"/>
+
+    <item android:id="@+id/place_holder"
+        android:title=""/>
+
+    <item android:id="@+id/moodboardFragment"
+        android:title="Moodboard"
+        android:icon="@drawable/moodboard"/>
+
+    <item android:id="@+id/locationFragment"
+        android:title="Location"
+        android:icon="@drawable/location"/>
+
+</menu>

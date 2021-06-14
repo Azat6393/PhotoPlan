@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/locationFragment">
+
+    <fragment
+        android:id="@+id/costsFragment"
+        android:name="com.azatberdimyradov.photoplan.ui.fragments.CostsFragment"
+        android:label="fragment_costs"
+        tools:layout="@layout/fragment_costs" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.azatberdimyradov.photoplan.ui.fragments.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_locationFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moodboardFragment"
+        android:name="com.azatberdimyradov.photoplan.ui.fragments.MoodboardFragment"
+        android:label="fragment_moodboard"
+        tools:layout="@layout/fragment_moodboard" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.azatberdimyradov.photoplan.ui.fragments.SettingFragment"
+        android:label="fragments_setting"
+        tools:layout="@layout/fragments_setting" />
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.azatberdimyradov.photoplan.ui.fragments.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <argument
+            android:name="image"
+            app:argType="com.azatberdimyradov.photoplan.models.Image" />
+    </fragment>
+</navigation>
