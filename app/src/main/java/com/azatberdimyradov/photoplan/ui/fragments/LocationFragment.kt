@@ -29,6 +29,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.util.*
 
+@AndroidEntryPoint
 class LocationFragment: Fragment(R.layout.fragment_location), LocationAdapter.ItemListener {
 
     private lateinit var binding: FragmentLocationBinding

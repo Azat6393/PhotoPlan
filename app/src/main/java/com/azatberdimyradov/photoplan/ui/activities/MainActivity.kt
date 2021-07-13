@@ -11,6 +11,7 @@ import com.azatberdimyradov.photoplan.databinding.ActivityMainBinding
 import com.azatberdimyradov.photoplan.utils.APP_ACTIVITY
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

@@ -7,7 +7,9 @@ import androidx.navigation.fragment.navArgs
 import com.azatberdimyradov.photoplan.R
 import com.azatberdimyradov.photoplan.databinding.FragmentImageBinding
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ImageFragment: Fragment(R.layout.fragment_image) {
 
     private val args: ImageFragmentArgs by navArgs()

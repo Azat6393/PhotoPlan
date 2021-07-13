@@ -1,6 +1,7 @@
 package com.azatberdimyradov.photoplan.viewmodels
 
 import android.net.Uri
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.azatberdimyradov.photoplan.models.Image
@@ -14,9 +15,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class LocationViewModel : ViewModel() {
+class LocationViewModel @ViewModelInject constructor(
+    private val repository: PhotoPlanRepository
+) : ViewModel() {
 
-    private val repository = PhotoPlanRepository()
     private val _locations = MutableStateFlow<Resource<List<Location>>>(Resource.Empty())
     val locations: StateFlow<Resource<List<Location>>> = _locations
 
@@ -29,14 +31,14 @@ class LocationViewModel : ViewModel() {
     }
 
     fun addImage(uri: Uri, location: Location) = viewModelScope.launch {
-        repository.addImageToStorage(uri, location)
+        repository.addImage(uri, location)
     }
 
     fun addLocation(location: Location) = viewModelScope.launch {
         repository.addLocation(location)
     }
 
-    fun changeSectionName(sectionName: String) = viewModelScope.launch{
+    fun changeSectionName(sectionName: String) = viewModelScope.launch {
         repository.changeSectionName(sectionName)
     }
 
@@ -45,7 +47,7 @@ class LocationViewModel : ViewModel() {
     }
 
     fun deleteImages(deleteList: List<Image>, location: Location) = viewModelScope.launch {
-        repository.deleteImagesFromStorage(deleteList, location)
+        repository.deleteImages(deleteList, location)
     }
 
     private fun getLocations() = viewModelScope.launch {
